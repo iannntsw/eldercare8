@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "270999185505",
+    "firebase_url": "https://eldercare-4b94e.firebaseio.com",
+    "project_id": "eldercare-4b94e",
+    "storage_bucket": "eldercare-4b94e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270999185505:android:73cacfaa55f5b08f",
+        "android_client_info": {
+          "package_name": "com.example.eldercare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270999185505-39rr7t8g7dfti27cg4pt4mviko7srf1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.eldercare",
+            "certificate_hash": "aa003a181e70021939acea5fda8d11eb8ef73f67"
+          }
+        },
+        {
+          "client_id": "270999185505-jb2b3g0rvm20fqlav1orocobslb4v9nj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXDMR42YNDazAQXRG84oElKFXmorSl1Tk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270999185505-jb2b3g0rvm20fqlav1orocobslb4v9nj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
