@@ -67,11 +67,13 @@
             android:id="@+id/signUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="134dp"
+            android:layout_marginBottom="133dp"
             android:text="signUp"
-            app:layout_constraintStart_toStartOf="@+id/signUpConditions"
-            app:layout_constraintTop_toBottomOf="@+id/signUpConditions" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView4"
@@ -94,7 +96,7 @@
             android:id="@+id/textViewSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:text="Already Registered? Sign in here!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
@@ -112,128 +114,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSignIn" />
-
-        <EditText
-            android:id="@+id/signUpName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="53dp"
-            android:ems="10"
-            android:hint="Enter Full name"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="1dp"
-            android:text="Full Name:"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/signUpName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginPassword" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="102dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="1dp"
-            android:text="Age:"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/signUpAge"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpName" />
-
-        <EditText
-            android:id="@+id/signUpAge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="55dp"
-            android:ems="10"
-            android:hint="Enter age"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/signUpName" />
-
-        <EditText
-            android:id="@+id/signUpWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="54dp"
-            android:ems="10"
-            android:hint="Enter Weight in KG"
-            android:inputType="number"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpAge" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Weight:"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/signUpWeight"
-            app:layout_constraintTop_toBottomOf="@+id/signUpAge" />
-
-        <EditText
-            android:id="@+id/signUpDiet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="53dp"
-            android:ems="10"
-            android:hint="Enter Dietary specifications"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpWeight" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Diet:"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/signUpDiet"
-            app:layout_constraintTop_toBottomOf="@+id/signUpWeight" />
-
-        <EditText
-            android:id="@+id/signUpConditions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="53dp"
-            android:ems="10"
-            android:hint="Enter special conditions"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signUpDiet" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="89dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="Special conditions:"
-            android:textAlignment="textEnd"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/signUpButton"
-            app:layout_constraintEnd_toStartOf="@+id/signUpButton"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     </android.support.constraint.ConstraintLayout>
 

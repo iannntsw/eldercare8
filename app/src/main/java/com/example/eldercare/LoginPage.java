@@ -75,7 +75,7 @@ public class LoginPage extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(LoginPage.this, ProfileActivity.class));
+                            startActivity(new Intent(LoginPage.this, AddDetailsActivity.class));
                         } else {
                             Toast.makeText(LoginPage.this, task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
@@ -118,7 +118,7 @@ public class LoginPage extends AppCompatActivity {
 
                             FirebaseUser user = firebaseAuth.getCurrentUser();
 
-                            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), AddDetailsActivity.class);
                             startActivity(intent);
                             finish();
                             Toast.makeText(getApplicationContext(), "User logged in Successfully", Toast.LENGTH_SHORT).show();

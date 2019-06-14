@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_a"
+        android:checkable="true"
+        android:title="Activity planner"/>
+    <item
+        android:id="@+id/item_b"
+        android:checkable="true"
+        android:title="Medication timings"/>
+    <item
+        android:id="@+id/item_c"
+        android:checkable="true"
+        android:title="Order Food"/>
+    <item
+        android:id="@+id/item_d"
+        android:checkable="true"
+        android:title="Health Monitor"/>
+</menu>

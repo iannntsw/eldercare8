@@ -47,16 +47,15 @@ public class SignUpActivity extends AppCompatActivity {
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validate()){
                     firebaseAuth.createUserWithEmailAndPassword(userEmail.getText().toString().trim(),
                             userPassword.getText().toString().trim())
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        sendUserData();
                                         Toast.makeText(SignUpActivity.this, "Registered Successfully",
                                                 Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(SignUpActivity.this, LoginPage.class));
                                     } else {
                                         Toast.makeText(SignUpActivity.this, task.getException().getMessage(),
                                                 Toast.LENGTH_LONG).show();
@@ -64,40 +63,10 @@ public class SignUpActivity extends AppCompatActivity {
                                     }
                                 }
                             });
-                }
             }
         });
     }
 
-    private Boolean validate(){
-        Boolean result = false;
-
-        name = userName.getText().toString();
-        password = userPassword.getText().toString();
-        email = userEmail.getText().toString();
-        age = userAge.getText().toString();
-        weight = userWeight.getText().toString();
-        diet = userDiet.getText().toString();
-        conditions = userConditions.getText().toString();
-
-
-        if(name.isEmpty() || password.isEmpty() || email.isEmpty() || age.isEmpty()){
-            Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
-        }else {
-            result = true;
-        }
-
-        return result;
-
-    }
-
-    private void sendUserData(){
-        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        UserProfile userProfile = new UserProfile(email, name, age, weight, diet, conditions);
-        myRef.setValue(userProfile);
-
-    }
 
     public void loginClick (View view){
         Intent intent = new Intent(this, LoginPage.class);

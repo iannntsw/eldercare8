@@ -9,6 +9,7 @@ public class UserProfile {
     public String conditions;
 
     public UserProfile(String email, String name, String age, String weight, String diet, String conditions) {
+
         this.email = email;
         this.name = name;
         this.age = age;
