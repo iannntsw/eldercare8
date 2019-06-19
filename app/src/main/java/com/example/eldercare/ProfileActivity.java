@@ -35,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
 
     DrawerLayout drawerLayout;
     Button button;
+    Button addDetails;
 
     Button signOutButton;
     GoogleSignInClient mGoogleSignInClient;
@@ -53,12 +54,20 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         textWeight = findViewById(R.id.textWeight);
         textDiet = findViewById(R.id.textDiet);
         textConditions = findViewById(R.id.textConditions);
+        addDetails = findViewById(R.id.addDetailsbtn);
+
+        addDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this,AddDetailsActivity.class));
+            }
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         String userId = firebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference databaseReference = firebaseDatabase.getReference(userId);
+        DatabaseReference databaseReference = firebaseDatabase.getReference().child("Users").child(userId);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -125,12 +134,25 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         closeDrawer();
         switch (menuItem.getItemId()){
             case R.id.item_a:
-                Intent intent = new Intent(ProfileActivity.this, LoginPage.class);
+                Intent intent = new Intent(ProfileActivity.this, DayPlannerActivity.class);
                 startActivityForResult(intent, 0);
                 break;
 
             case R.id.item_b:
+                intent  = new Intent(ProfileActivity.this, MedicationActivity.class);
+                startActivityForResult(intent, 0);
                 break;
+
+            case R.id.item_c:
+                intent = new Intent(ProfileActivity.this, FoodActivity.class);
+                startActivityForResult(intent, 0);
+                break;
+
+            case R.id.item_d:
+                intent = new Intent(ProfileActivity.this, HealthActivity.class);
+                startActivityForResult(intent, 0);
+                break;
+
         }
         return false;
     }
@@ -150,4 +172,5 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         }
         super.onBackPressed();
     }
+
 }

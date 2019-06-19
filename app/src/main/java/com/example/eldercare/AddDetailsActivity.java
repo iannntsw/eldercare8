@@ -42,8 +42,6 @@ public class AddDetailsActivity extends AppCompatActivity {
 
         textViewSignIn = findViewById(R.id.textViewSignIn);
 
-
-
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +70,11 @@ public class AddDetailsActivity extends AppCompatActivity {
 
     public void loginClick (View view){
         Intent intent = new Intent(this, LoginPage.class);
+        startActivity(intent);
+    }
+
+    public void skip (View view){
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 

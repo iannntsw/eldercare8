@@ -16,11 +16,10 @@
             android:id="@+id/signUpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="76dp"
             android:text="done"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signUpConditions" />
 
         <TextView
@@ -69,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="102dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="1dp"
             android:text="Age:"
             android:textSize="20sp"
@@ -94,7 +93,7 @@
             android:id="@+id/signUpWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="52dp"
             android:ems="10"
             android:hint="Enter Weight in KG"
@@ -106,7 +105,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:text="Weight:"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/signUpWeight"
@@ -144,22 +143,31 @@
             android:hint="Enter special conditions"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
             app:layout_constraintTop_toBottomOf="@+id/signUpDiet" />
 
         <TextView
             android:id="@+id/textView10"
-            android:layout_width="89dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="94dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="8dp"
             android:text="Special conditions:"
             android:textAlignment="textEnd"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/signUpButton"
-            app:layout_constraintEnd_toStartOf="@+id/signUpButton"
-            app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintEnd_toStartOf="@+id/signUpConditions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signUpDiet" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="76dp"
+            android:onClick="skip"
+            android:text="Skip"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 

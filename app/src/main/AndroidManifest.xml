@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddDetailsActivity"></activity>
+        <activity android:name=".UpdateDayPlanActivity"></activity>
+        <activity android:name=".AddDayPlanActivity" />
+        <activity android:name=".HealthActivity" />
+        <activity android:name=".MedicationActivity" />
+        <activity android:name=".DayPlannerActivity" />
+        <activity android:name=".FoodActivity" />
+        <activity android:name=".AddDetailsActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".SignUpActivity"

@@ -64,8 +64,6 @@ public class LoginPage extends AppCompatActivity {
         userPassword = findViewById(R.id.loginPassword);
         userLogin = findViewById(R.id.loginButton);
 
-        firebaseAuth = FirebaseAuth.getInstance();
-
         userLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

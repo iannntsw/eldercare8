@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F4F4F4"
+        tools:context=".AddDayPlanActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            android:background="@color/homepage"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titlepage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="28dp"
+                android:text="Edit Activities"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="26sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/homepage" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="-60dp"
+            android:orientation="vertical"
+            android:background="#FFF"
+            android:paddingTop="22dp"
+            android:paddingBottom="22dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <TextView
+                    android:id="@+id/addtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Add Title"
+                    android:textColor="@color/homepage"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/titledoes"
+                    android:inputType="text"
+                    android:background="@drawable/bginputtask"
+                    android:paddingLeft="12dp"
+                    android:textColorHint="#B5B5B5"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:hint="Activity Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/adddesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Add Location"
+                    android:textColor="@color/homepage"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/descdoes"
+                    android:inputType="text"
+                    android:background="@drawable/bginputtask"
+                    android:paddingLeft="12dp"
+                    android:textColorHint="#B5B5B5"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:hint="Add Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/adddate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Add Date/Time"
+                    android:textColor="@color/homepage"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/datedoes"
+                    android:inputType="text"
+                    android:background="@drawable/bginputtask"
+                    android:paddingLeft="12dp"
+                    android:textColorHint="#B5B5B5"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:hint="Date/Time"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSaveUpdate"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Save Update"
+            android:textColor="#FFF"
+            android:textAllCaps="false"
+            android:background="@drawable/dayplancreatebtn"
+            android:textSize="22sp"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Delete"
+            android:textColor="#AFAFAF"
+            android:textAllCaps="false"
+            android:background="@drawable/dayplancancelbtn"
+            android:textSize="22sp"/>
+
+    </LinearLayout>
+
