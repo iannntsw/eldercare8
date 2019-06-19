@@ -54,19 +54,15 @@ public class UpdateDayPlanActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference.addValueEventListener(new ValueEventListener() {
+                databaseReference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
-                            dataSnapshot1.getRef().removeValue();
-
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()){
                             Intent intent = new Intent(UpdateDayPlanActivity.this, DayPlannerActivity.class);
                             startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(),"Unable to delete", Toast.LENGTH_SHORT).show();
                         }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });
