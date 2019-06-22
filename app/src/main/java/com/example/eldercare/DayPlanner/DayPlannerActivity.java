@@ -1,5 +1,6 @@
-package com.example.eldercare;
+package com.example.eldercare.DayPlanner;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.eldercare.FoodActivity;
+import com.example.eldercare.HealthMonitor.HealthActivity;
+import com.example.eldercare.MedicationActivity;
+import com.example.eldercare.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class DayPlannerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -55,6 +61,7 @@ public class DayPlannerActivity extends AppCompatActivity implements NavigationV
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
+        deleteCache(this.getApplicationContext());
         btnAddNew = findViewById(R.id.btnAddNew);
 
         btnAddNew.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +75,9 @@ public class DayPlannerActivity extends AppCompatActivity implements NavigationV
 
         //working with data
         ourdoes = findViewById(R.id.ourdoes);
-        ourdoes.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        ourdoes.setLayoutManager(llm);
         list = new ArrayList<MyDoes>();
 
         //get data
@@ -77,6 +86,8 @@ public class DayPlannerActivity extends AppCompatActivity implements NavigationV
 
         String userId = firebaseAuth.getInstance().getCurrentUser().getUid();
         DatabaseReference databaseReference = firebaseDatabase.getReference().child("Users").child(userId).child("Does");
+        doesAdapter = new DoesAdapter(DayPlannerActivity.this,list);
+        ourdoes.setAdapter(doesAdapter);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -142,4 +153,30 @@ public class DayPlannerActivity extends AppCompatActivity implements NavigationV
         }
         super.onBackPressed();
     }
+
+    public static void deleteCache(Context context) {
+        try {
+            File dir = context.getCacheDir();
+            deleteDir(dir);
+        } catch (Exception e) { e.printStackTrace();}
+    }
+
+    public static boolean deleteDir(File dir) {
+        if (dir != null && dir.isDirectory()) {
+            String[] children = dir.list();
+            for (int i = 0; i < children.length; i++) {
+                boolean success = deleteDir(new File(dir, children[i]));
+                if (!success) {
+                    return false;
+                }
+            }
+            return dir.delete();
+        } else if(dir!= null && dir.isFile()) {
+            return dir.delete();
+        } else {
+            return false;
+        }
+    }
+
+
 }

@@ -1,12 +1,14 @@
-package com.example.eldercare;
+package com.example.eldercare.UserProfile;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.eldercare.R;
+import com.example.eldercare.UserProfile.LoginPage;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.eldercare;
+package com.example.eldercare.DayPlanner;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.eldercare.R;
 
 import java.util.ArrayList;
 
@@ -32,7 +34,6 @@ public class DoesAdapter extends RecyclerView.Adapter<DoesAdapter.MyViewHolder> 
         myViewHolder.titledoes.setText(myDoes.get(i).getTitledoes());
         myViewHolder.descdoes.setText(myDoes.get(i).getDescdoes());
         myViewHolder.datedoes.setText(myDoes.get(i).getDatedoes());
-
 
         final String getTitleDoes = myDoes.get(i).getTitledoes();
         final String getDescDoes = myDoes.get(i).getDescdoes();

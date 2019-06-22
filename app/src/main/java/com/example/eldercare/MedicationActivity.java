@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.eldercare.DayPlanner.DayPlannerActivity;
+import com.example.eldercare.HealthMonitor.HealthActivity;
+
 public class MedicationActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;

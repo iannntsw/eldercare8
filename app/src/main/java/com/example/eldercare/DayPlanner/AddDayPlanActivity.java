@@ -1,4 +1,4 @@
-package com.example.eldercare;
+package com.example.eldercare.DayPlanner;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.eldercare.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,8 +32,8 @@ public class AddDayPlanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_day_plan);
 
-        addActivityBtn = findViewById(R.id.btnSaveTask);
-        cancelBtn = findViewById(R.id.btnCancel);
+        addActivityBtn = findViewById(R.id.btnSaveUpdate);
+        cancelBtn = findViewById(R.id.btnDelete);
 
         titledoes = findViewById(R.id.titledoes);
         descdoes = findViewById(R.id.descdoes);
@@ -64,9 +65,6 @@ public class AddDayPlanActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
             }
         });
 

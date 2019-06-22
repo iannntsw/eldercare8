@@ -1,7 +1,6 @@
-package com.example.eldercare;
+package com.example.eldercare.UserProfile;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,11 +16,14 @@ import android.widget.Toast;
 import android.support.v7.widget.Toolbar;
 
 
-import com.google.android.gms.auth.api.Auth;
+import com.example.eldercare.DayPlanner.DayPlannerActivity;
+import com.example.eldercare.FoodActivity;
+import com.example.eldercare.HealthMonitor.HealthActivity;
+import com.example.eldercare.MedicationActivity;
+import com.example.eldercare.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -54,14 +56,6 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
         textWeight = findViewById(R.id.textWeight);
         textDiet = findViewById(R.id.textDiet);
         textConditions = findViewById(R.id.textConditions);
-        addDetails = findViewById(R.id.addDetailsbtn);
-
-        addDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this,AddDetailsActivity.class));
-            }
-        });
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();

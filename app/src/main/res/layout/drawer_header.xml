@@ -17,16 +17,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="name"
+            android:text="ElderCare"
             android:textColor="#fff"
-            android:textSize="30sp"/>
+            android:textSize="36sp"
+            android:textStyle="bold|italic" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="email"
-            android:textColor="#fff"
-            android:textSize="16sp"/>
     </LinearLayout>
 
 </RelativeLayout>

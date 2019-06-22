@@ -1,4 +1,4 @@
-package com.example.eldercare;
+package com.example.eldercare.DayPlanner;
 
 public class MyDoes {
 

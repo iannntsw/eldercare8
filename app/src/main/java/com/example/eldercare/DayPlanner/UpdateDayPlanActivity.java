@@ -1,14 +1,15 @@
-package com.example.eldercare;
+package com.example.eldercare.DayPlanner;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.example.eldercare.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UpdateDayPlanActivity extends AppCompatActivity {
 
+    private static final String TAG = "Update Day Activity" ;
     EditText titleDoes, descDoes, dateDoes;
     Button btnSaveUpdate, btnDelete;
     DatabaseReference databaseReference;
@@ -50,6 +52,20 @@ public class UpdateDayPlanActivity extends AppCompatActivity {
         String userId = firebaseAuth.getCurrentUser().getUid();
         databaseReference = firebaseDatabase.getReference("Users")
                 .child(userId).child("Does").child("Does" + keyDoesId);
+        Log.d(TAG, "onChanged: the query is exhausted..." + keyDoesId);
+
+        //btnDelete.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  if (keyDoesId != null){
+                //    Log.wtf(TAG,"onclick:delete card" + keyDoesId);
+                  //  databaseReference.removeValue();
+                //}
+
+                //Intent intent = new Intent(UpdateDayPlanActivity.this, DayPlannerActivity.class);
+                //startActivity(intent);
+            //}
+        //});
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,10 +76,7 @@ public class UpdateDayPlanActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             Intent intent = new Intent(UpdateDayPlanActivity.this, DayPlannerActivity.class);
                             startActivity(intent);
-                        } else {
-                            Toast.makeText(getApplicationContext(),"Unable to delete", Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
             }
@@ -76,6 +89,7 @@ public class UpdateDayPlanActivity extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Log.d(TAG,"update card" + keyDoesId);
                         dataSnapshot.getRef().child("titledoes").setValue(titleDoes.getText().toString());
                         dataSnapshot.getRef().child("descdoes").setValue(descDoes.getText().toString());
                         dataSnapshot.getRef().child("datedoes").setValue(dateDoes.getText().toString());
@@ -92,5 +106,6 @@ public class UpdateDayPlanActivity extends AppCompatActivity {
                 });
             }
         });
+
     }
 }

@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DayPlannerActivity">
+    tools:context=".DayPlanner.DayPlannerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_marginLeft="16dp"
+                    android:layout_marginLeft="32dp"
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
@@ -36,7 +36,7 @@
                         android:id="@+id/titlepage"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
+                        android:layout_marginTop="20dp"
                         android:text="Day Planner"
                         android:textAlignment="center"
                         android:textColor="@color/white"
@@ -78,6 +78,7 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/ourdoes"
+            android:background="@drawable/recyclerview2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"

@@ -43,7 +43,8 @@
             android:id="@+id/datedoes"
             android:textSize="18sp"
             android:textColor="#F63EA5"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
             android:text="Tomorrow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
